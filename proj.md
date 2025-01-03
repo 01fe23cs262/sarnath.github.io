@@ -38,7 +38,7 @@ This program uses **Dijkstra's algorithm** to find the shortest delivery route f
 
    Overall, the space complexity is \( O(V + E) \).
 
----
+
 
 ### Real-World Implications
 - **Efficiency**: The system helps ensure timely deliveries by avoiding congested or slow routes.
@@ -47,6 +47,7 @@ This program uses **Dijkstra's algorithm** to find the shortest delivery route f
 
 
 **CODE LINK  DIJKSTRA'S :https://github.com/01fe23cs262/sarnath.github.io/blob/d1c2f42aa90c317b588659c0c489f3620d3c382a/dij.cpp**
+
 ---
 
 
@@ -69,4 +70,18 @@ The queue ensures that each next restaurant processed is the one with the smalle
 
 At the end, you'll have the shortest path to each restaurant, with the queue helping you process them in order of increasing distance.
 
+**Time Complexity:**
+
+Insertion: O(log n) 
+
+Extraction: O(log n) 
+
+Peek: O(1) 
+
+Decrease-Key: O(log n) 
+
+**Space Complexity: O(n)**
+
 **CODE LINK FOR PRIORITY QUE :https://github.com/01fe23cs262/sarnath.github.io/blob/40f71194a508ac78a63d42b454c5188957325b48/priorityque.cpp**
+
+---
