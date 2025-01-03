@@ -11,7 +11,8 @@
 using namespace std;
 
 // Customer queue management
-class CustomerQueue {
+class CustomerQueue 
+{
     queue<string> customers;
 public:
     void addCustomer(const string& name)
@@ -20,7 +21,8 @@ public:
     }
     void removeCustomer() 
     {
-        if (!customers.empty()) {
+        if (!customers.empty())
+        {
             cout << "Customer " << customers.front() << " has left.\n";
             customers.pop();
         } else 
@@ -37,7 +39,8 @@ public:
         }
         queue<string> temp = customers;
         cout << "Customers in the queue:\n";
-        while (!temp.empty()) {
+        while (!temp.empty()) 
+        {
             cout << temp.front() << endl;
             temp.pop();
         }
@@ -78,22 +81,25 @@ public:
             cout << "Table " << table << " is not reserved.\n";
         }
     }
-    void displayReservations() {
+    void displayReservations()
+{
         if (reservations.empty()) 
             {
             cout << "No reservations.\n";
             return;
         }
         cout << "Current reservations:\n";
-        for (auto &it : reservations) 
+        for (auto &it : reservations)     
             {
+                
             cout << "Table " << it.first << ": " << it.second.first << " (Seats: " << it.second.second << ")\n";
         }
     }
 };
 
 // Inventory management
-class Inventory {
+class Inventory 
+{
     map<string, int> items;
 public:
     void updateItem(const string& item, int quantity)
@@ -101,26 +107,36 @@ public:
         items[item] += quantity;
         cout << "Updated " << item << " to " << items[item] << ".\n";
     }
-    void checkInventory() {
-        if (items.empty()) {
+    void checkInventory()
+{
+       
+    
+    if (items.empty())
+        {
             cout << "Inventory is empty.\n";
             return;
         }
         cout << "Current inventory:\n";
-        for (auto &it : items) {
+        for (auto &it : items) 
+        {
             cout << it.first << ": " << it.second << endl;
         }
     }
 };
 
+
+
 // Menu and billing system
-class FoodMenu {
+class FoodMenu
+{
     map<string, double> menu;
     double totalRevenue = 0.0;
 public:
-    FoodMenu() {
+    FoodMenu()
+{
         // Pre-populating the menu with 30 food items and their prices in rupees
-        menu = {
+        menu = 
+        {
             {"Pizza", 250.00},
             {"Burger", 120.00},
             {"Pasta", 180.00},
@@ -151,9 +167,11 @@ public:
             {"Ching's Manchurian", 140.00},
             {"Chicken Wings", 250.00}
         };
-    }
+    
+}
 
-    void addItem(const string& dish, double price) {
+    void addItem(const string& dish, double price)
+{
         menu[dish] = price;
     }
     
@@ -161,29 +179,37 @@ public:
     
     
 
-    void displayMenu() {
+    void displayMenu()
+{
         cout << "Food Menu:\n";
-        for (auto &it : menu) {
+        for (auto &it : menu)
+            {
             cout << setw(20) << left << it.first << "Rs. " << it.second << endl;
         }
     }
     
     
 
-    void takeOrder() {
+    void takeOrder() 
+{
         string dish;
         int quantity;
         double bill = 0.0;
         cout << "Enter orders (type 'done' to finish):\n";
-        while (true) {
+        while (true)
+            {
             cout << "Dish: ";
             cin >> dish;
             if (dish == "done") break;
-            if (menu.count(dish)) {
+                
+            if (menu.count(dish))
+            {
                 cout << "Quantity: ";
                 cin >> quantity;
                 bill += menu[dish] * quantity;
-            } else {
+            } 
+            else
+            {
                 cout << "Dish not found.\n";
             }
         }
@@ -194,38 +220,48 @@ public:
         cout << "Split among how many people? ";
 
         cin >> people;
-        if (people > 0) {
+        if (people > 0)
+        {
             cout << "Each person owes: Rs. " << bill / people << endl;
-        } else {
+        } 
+        else
+        {
             cout << "Invalid number of people.\n";
         }
     }
 
-    void printRevenue() {
+    void printRevenue()
+{
         cout << "Total revenue for the day: Rs. " << totalRevenue << endl;
     }
 
-    void resetRevenue() {
+    void resetRevenue()
+{
         totalRevenue = 0.0;
         cout << "Revenue reset to 0.\n";
     }
+
 };
 
 
 
 // Delivery system
-class DeliverySystem {
+class DeliverySystem 
+{
     map<int, vector<pair<int, double>>> graph;
 
 public:
-    void addEdge(int u, int v, double w) {
+    void addEdge(int u, int v, double w)
+{
         graph[u].emplace_back(v, w);
         graph[v].emplace_back(u, w); // Assuming undirected graph
     }
 
-    void shortestDistance(int source, int destination) {
+    void shortestDistance(int source, int destination)
+{
         map<int, double> dist;
-        for (auto &it : graph) {
+        for (auto &it : graph) 
+        {
             dist[it.first] = numeric_limits<double>::infinity();
         }
         dist[source] = 0.0;
@@ -235,15 +271,18 @@ public:
         pq.emplace(0.0, source);
         
 
-        while (!pq.empty()) {
+        while (!pq.empty())
+            {
             double distance = pq.top().first;
             int node = pq.top().second;
             pq.pop();
 
             if (distance > dist[node]) continue;
 
-            for (auto &neighbor : graph[node]) {
+            for (auto &neighbor : graph[node])
+                {
                 int nextNode = neighbor.first;
+                    
                 double edgeWeight = neighbor.second;
 
                 if (dist[node] + edgeWeight < dist[nextNode])
@@ -258,55 +297,70 @@ public:
         if (dist[destination] != numeric_limits<double>::infinity()) 
         {
             cout << "Shortest distance from " << source << " to " << destination << " is " << dist[destination] << "\n";
-        } else {
+        } 
+        else
+        {
             cout << "No path found from " << source << " to " << destination << "\n";
         }
     }
 };
 
 // Lodging System
-class LodgingSystem {
+class LodgingSystem
+{
     set<pair<int, string>> rooms; // Room ID and Type (sorted by price)
     map<int, pair<string, double>> roomTypes; // Room Type -> Price
 
 public:
-    LodgingSystem() {
+    LodgingSystem()
+{
         roomTypes[1] = {"Single", 1000.00};
         roomTypes[2] = {"Double", 1500.00};
         roomTypes[3] = {"Suite", 2500.00};
+    
         rooms.insert({1, "Single"});
         rooms.insert({2, "Double"});
         rooms.insert({3, "Suite"});
     }
 
-    void displayAvailableRooms() {
-        cout << "Available Rooms:\n";
+    void displayAvailableRooms() 
+{
+     
+    
+    cout << "Available Rooms:\n";
         for (const auto &room : rooms) 
         {
             cout << "Room Type: " << room.second << ", Price: Rs. " << roomTypes[room.first].second << endl;
         }
+    
     }
 
-    void bookRoom(int roomType, int days) {
+    void bookRoom(int roomType, int days) 
+{
         auto it = rooms.lower_bound({roomType, ""});
         if (it != rooms.end()) 
         {
             double price = roomTypes[it->first].second * days;
             cout << "Room " << roomTypes[it->first].first << " booked for " << days << " days. Total Price: Rs. " << price << endl;
             rooms.erase(it);
-        } else {
+        } 
+        else 
+        {
             cout << "No rooms of this type available.\n";
         }
     }
 
-    void releaseRoom(int roomType) {
+    void releaseRoom(int roomType)
+{
         rooms.insert({roomType, roomTypes[roomType].first});
         cout << "Room type " << roomTypes[roomType].first << " is now available.\n";
     }
+
 };
 
 // Main function
-int main() {
+int main() 
+{
     CustomerQueue queue;
     Reservations reservations(10);
     Inventory inventory;
@@ -315,7 +369,8 @@ int main() {
     LodgingSystem lodging;
 
     // Corrected initialization of connections vector
-    vector<tuple<int, int, double>> connections = {
+    vector<tuple<int, int, double>> connections = 
+    {
         make_tuple(0, 1, 1.0),
         make_tuple(0, 2, 1.0),
         make_tuple(0, 3, 1.0),
@@ -326,7 +381,8 @@ int main() {
     };
 
     // Adding edges to the delivery system
-    for (auto &conn : connections) {
+    for (auto &conn : connections)
+    {
         int u = get<0>(conn);
         int v = get<1>(conn);
         double w = get<2>(conn);
@@ -334,22 +390,31 @@ int main() {
     }
 
     int choice;
-    do {
+    do
+        {
         cout << "\nRestaurant Management System\n";
+            
         cout << "1. Manage Customer Queue\n";
+            
         cout << "2. Manage Reservations\n";
+            
         cout << "3. Manage Inventory\n";
         cout << "4. Manage Menu and Billing\n";
+            
         cout << "5. Delivery System\n";
         cout << "6. Lodging System\n";
         cout << "7. Exit\n";
         cout << "Enter your choice: ";
+            
         cin >> choice;
 
-        switch (choice) {
-            case 1: {
+        switch (choice)
+            {
+            case 1: 
+                {
                 int queueChoice;
-                do {
+                do
+                    {
                     cout << "\nCustomer Queue Management\n";
                     cout << "1. Add Customer\n";
                     cout << "2. Remove Customer\n";
@@ -358,26 +423,32 @@ int main() {
                     cout << "Enter your choice: ";
                     cin >> queueChoice;
 
-                    if (queueChoice == 1) {
+                    if (queueChoice == 1)
+                    {
                         string name;
                         cout << "Enter customer name: ";
                         cin >> name;
                         queue.addCustomer(name);
-                    } else if (queueChoice == 2) 
+                    } 
+                    else if (queueChoice == 2) 
                     {
                         queue.removeCustomer();
-                    } else if (queueChoice == 3)
+                    } 
+                    else if (queueChoice == 3)
                      {
                         queue.displayQueue();
                     }
-                } 
+                }
+                    
                 while (queueChoice != 4);
                 break;
             }
+                
             case 2: 
                 {
                 int reservationChoice;
-                do {
+                do
+                    {
                     cout << "\nReservation Management\n";
                     cout << "1. Reserve Table\n";
                     cout << "2. Release Table\n";
@@ -398,22 +469,27 @@ int main() {
                         cout << "Enter number of seats: ";
                         cin >> seats;
                         reservations.reserveTable(table, name, seats);
-                    } else if (reservationChoice == 2)
+                    } 
+                    else if (reservationChoice == 2)
                      {
                         int table;
                         cout << "Enter table number to release: ";
                         cin >> table;
                         reservations.releaseTable(table);
-                    } else if (reservationChoice == 3) 
+                    }
+                    else if (reservationChoice == 3) 
                     {
                         reservations.displayReservations();
                     }
-                } while (reservationChoice != 4);
+                } 
+                    while (reservationChoice != 4);
                 break;
             }
-            case 3: {
+            case 3:
+                {
                 int inventoryChoice;
-                do {
+                do
+                    {
                     cout << "\nInventory Management\n";
                     cout << "1. Update Item\n";
                     cout << "2. Check Inventory\n";
@@ -430,16 +506,20 @@ int main() {
                         cout << "Enter quantity: ";
                         cin >> quantity;
                         inventory.updateItem(item, quantity);
-                    } else if (inventoryChoice == 2) 
+                    }
+                    else if (inventoryChoice == 2) 
                     {
                         inventory.checkInventory();
                     }
-                } while (inventoryChoice != 3);
+                } 
+                    while (inventoryChoice != 3);
                 break;
             }
-            case 4: {
+            case 4:
+                {
                 int menuChoice;
-                do {
+                do 
+                {
                     cout << "\nMenu and Billing\n";
                     cout << "1. Display Menu\n";
                     cout << "2. Take Order\n";
@@ -449,31 +529,39 @@ int main() {
                     cout << "Enter your choice: ";
                     cin >> menuChoice;
 
-                    if (menuChoice == 1) {
+                    if (menuChoice == 1)
+                    {
                         menu.displayMenu();
-                    } else if (menuChoice == 2) 
+                    } 
+                    else if (menuChoice == 2) 
                     {
                         menu.takeOrder();
-                    } else if (menuChoice == 3)
+                    }
+                    else if (menuChoice == 3)
                      {
                         menu.printRevenue();
-                    } else if (menuChoice == 4)
+                    }
+                    else if (menuChoice == 4)
                      {
                         menu.resetRevenue();
                     }
-                } while (menuChoice != 5);
+                } 
+                    while (menuChoice != 5);
                 break;
             }
-            case 5: {
+            case 5: 
+                {
                 int deliveryChoice;
-                do {
+                do
+                    {
                     cout << "\nDelivery System\n";
                     cout << "1. Calculate Shortest Distance\n";
                     cout << "2. Back\n";
                     cout << "Enter your choice: ";
                     cin >> deliveryChoice;
 
-                    if (deliveryChoice == 1) {
+                    if (deliveryChoice == 1)
+                    {
                         int source, destination;
                         cout << "Enter source location: ";
                         cin >> source;
@@ -481,12 +569,16 @@ int main() {
                         cin >> destination;
                         delivery.shortestDistance(source, destination);
                     }
-                } while (deliveryChoice != 2);
-                break;
+                }
+                    while (deliveryChoice != 2);
+               
+                    break;
             }
-            case 6: {
+            case 6: 
+                {
                 int lodgingChoice;
-                do {
+                do
+                    {
                     cout << "\nLodging System\n";
                     cout << "1. Display Available Rooms\n";
                     cout << "2. Book Room\n";
@@ -495,22 +587,27 @@ int main() {
                     cout << "Enter your choice: ";
                     cin >> lodgingChoice;
 
-                    if (lodgingChoice == 1) {
+                    if (lodgingChoice == 1) 
+                    {
                         lodging.displayAvailableRooms();
-                    } else if (lodgingChoice == 2) {
+                    } else if (lodgingChoice == 2) 
+                    {
                         int roomType, days;
                         cout << "Enter room type (1 for Single, 2 for Double, 3 for Suite): ";
                         cin >> roomType;
                         cout << "Enter number of days: ";
                         cin >> days;
                         lodging.bookRoom(roomType, days);
-                    } else if (lodgingChoice == 3) {
+                    } 
+                    else if (lodgingChoice == 3) 
+                    {
                         int roomType;
                         cout << "Enter room type to release (1 for Single, 2 for Double, 3 for Suite): ";
                         cin >> roomType;
                         lodging.releaseRoom(roomType);
                     }
-                } while (lodgingChoice != 4);
+                }
+                    while (lodgingChoice != 4);
                 break;
             }
             case 7:
@@ -519,7 +616,8 @@ int main() {
             default:
                 cout << "Invalid choice. Please try again.\n";
         }
-    } while (choice != 7);
+    }
+        while (choice != 7);
 
     return 0;
 }
