@@ -102,6 +102,7 @@ This update operation in a map has a time complexity of O(log n), where n is the
 
 This functionality displays the current items and their quantities in the inventory.
 The map container automatically keeps the items sorted by the item name.
+
 **Algorithm:**
 
 The program iterates over all key-value pairs in the map and prints them out.
