@@ -8,8 +8,8 @@
 /* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f9c6d2, #a0d8f1);
-    color: #3d3d3d;
+    background: linear-gradient(135deg, #f5f5dc, #e8e4d4);
+    color: #4a3f35;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -26,21 +26,22 @@ section {
     padding: 2rem;
     width: 90%;
     max-width: 800px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 15px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #dcd5c3;
 }
 
 section:hover {
     transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #f9c6d2, #a0d8f1);
-    color: #ffffff;
+    background: linear-gradient(135deg, #f5e8d7, #e8d5b9);
+    color: #4a3f35;
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 2rem;
@@ -50,22 +51,22 @@ header {
 header h1 {
     font-size: 2.5rem;
     margin: 0;
-    font-weight: 700;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.7);
 }
 
 header p {
     margin-top: 0.5rem;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    color: #6d6153;
 }
 
 /* Section Titles */
 h2 {
-    color: #a0d8f1;
+    color: #b59f8c;
     margin-bottom: 1rem;
     font-weight: bold;
-    border-bottom: 3px solid #d0e7f1;
+    border-bottom: 2px solid #e4dac6;
     padding-bottom: 0.5rem;
     display: inline-block;
 }
@@ -74,26 +75,26 @@ h2 {
 ul {
     list-style: none;
     padding: 0;
-    color: #3d3d3d;
+    color: #4a3f35;
 }
 
 ul li {
-    background: #f7d0d7;
+    background: #f9f4ed;
     margin-bottom: 1rem;
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 10px;
-    border: 1px solid #f3c2c7;
+    border: 1px solid #e0d5c3;
     transition: background-color 0.4s ease, transform 0.3s ease;
 }
 
 ul li:hover {
-    background-color: #f1d5d8;
-    transform: translateY(-5px);
+    background-color: #f4ede3;
+    transform: translateY(-3px);
 }
 
 /* Links */
 a {
-    color: #a0d8f1;
+    color: #b59f8c;
     text-decoration: none;
     font-weight: 600;
     position: relative;
@@ -101,7 +102,7 @@ a {
 }
 
 a:hover {
-    color: #78c0e0;
+    color: #8f7866;
 }
 
 a::after {
@@ -111,7 +112,7 @@ a::after {
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: #a0d8f1;
+    background-color: #b59f8c;
     transition: width 0.3s ease;
 }
 
@@ -122,32 +123,32 @@ a:hover::after {
 /* Definition List */
 dl dt {
     font-weight: bold;
-    color: #a0d8f1;
+    color: #b59f8c;
     margin-top: 1rem;
 }
 
 dl dd {
     margin-left: 1.5rem;
-    color: #555;
+    color: #6d6153;
 }
 
 /* Blockquote */
 blockquote {
     font-style: italic;
-    color: #555;
-    border-left: 6px solid #a0d8f1;
-    padding-left: 1.5rem;
+    color: #6d6153;
+    border-left: 4px solid #b59f8c;
+    padding-left: 1rem;
     margin-top: 2rem;
-    background-color: #f7d0d7;
-    border-radius: 10px;
+    background-color: #f9f4ed;
+    border-radius: 8px;
 }
 
 /* Buttons */
 button {
-    background: linear-gradient(135deg, #f9c6d2, #ffdd8f);
-    color: #ffffff;
+    background: linear-gradient(135deg, #e8d5b9, #d9c4a5);
+    color: #4a3f35;
     padding: 12px 24px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -155,8 +156,8 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(135deg, #ffdd8f, #f7c59f);
-    transform: translateY(-3px);
+    background: linear-gradient(135deg, #d9c4a5, #c7b296);
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -175,6 +176,6 @@ button:hover {
 
     button {
         padding: 10px 20px;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
