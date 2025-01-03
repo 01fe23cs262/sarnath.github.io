@@ -1,6 +1,6 @@
 ### Explanation with Respect to a Restaurant Delivery System
 
-### 1) DELIVERY SYSTEM USING SHORTEST DISTANCE
+### 1) DELIVERY SYSTEM 
 
 This program uses **Dijkstra's algorithm** to find the shortest delivery route from a restaurant to a customer's location.
 
@@ -46,6 +46,27 @@ This program uses **Dijkstra's algorithm** to find the shortest delivery route f
 - **Customizability**: The weights can adapt to represent real-time traffic or delivery priorities.
 
 
-**CODE LINK**
+**CODE LINK  DIJKSTRA'S :https://github.com/01fe23cs262/sarnath.github.io/blob/d1c2f42aa90c317b588659c0c489f3620d3c382a/dij.cpp**
+---
 
-**DIJKSTRA'S :https://github.com/01fe23cs262/sarnath.github.io/blob/d1c2f42aa90c317b588659c0c489f3620d3c382a/dij.cpp**
+
+
+### 2) STORING LOCATIONS ALONG WITH THEIR SHORTEST DISTANCES
+
+### Priority Queue Role:
+
+The priority queue stores restaurants (or locations) along with their current shortest distance from your home.
+It always gives priority to the closest restaurant, ensuring that you explore the shortest possible paths first.
+
+### Process:
+
+You start by adding your home to the queue with a distance of 0.
+The priority queue will first pop out your home (since it has the shortest distance), then check the neighboring locations (restaurants) that you can directly access from your home.
+For each restaurant, if a shorter route is found via your current location, the queue is updated with the new distance for that restaurant.
+The queue ensures that each next restaurant processed is the one with the smallest distance from the start, so the algorithm always works on the shortest possible routes.
+
+### Final Outcome:
+
+At the end, you'll have the shortest path to each restaurant, with the queue helping you process them in order of increasing distance.
+
+**CODE LINK:**
