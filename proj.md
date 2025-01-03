@@ -85,3 +85,24 @@ Decrease-Key: O(log n)
 **CODE LINK FOR PRIORITY QUE :https://github.com/01fe23cs262/sarnath.github.io/blob/40f71194a508ac78a63d42b454c5188957325b48/priorityque.cpp**
 
 ---
+
+### 3) MANAGE INVENTORY
+
+**Update Inventory Item:**
+
+This functionality updates the quantity of a specific item in the inventory.
+The inventory is stored in a map<string, int>, where the key is the item name (string), and the value is the quantity of the item (integer).
+
+**Algorithm:**
+
+If the item exists in the inventory, the quantity is incremented by the specified value. If the item does not exist, it is added with the new quantity.
+This update operation in a map has a time complexity of O(log n), where n is the number of items in the inventory.
+
+**Check Inventory:**
+
+This functionality displays the current items and their quantities in the inventory.
+The map container automatically keeps the items sorted by the item name.
+**Algorithm:**
+
+The program iterates over all key-value pairs in the map and prints them out.
+The time complexity for displaying all items is O(n), where n is the number of items in the inventory.
