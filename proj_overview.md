@@ -48,39 +48,41 @@ The initial budget for transforming a 1,500 sq km city into a smart city ranges 
 
 # PROJECT DEFINITION
 LINK BELOW:
-https://github.com/01fe23cs262/DAA_PORTFOLIO.github.io/blob/88e9bc865cec02f799abf1117f50fcfa4197d548/PROBLEM%20DEFINITION.md
+https://github.com/01fe23cs262/sarnath.github.io/blob/61bb78dd8571e2b42909f2bbdfd7f67c22dc31d0/proj.md
 # MERGED CODE
+
 https://github.com/01fe23cs262/DAA_PORTFOLIO.github.io/blob/88d085b2591af55873db0497c11067f4d2259472/daa_mergedcode.cpp
 
-# **INDIVIDUAL PORTFOLIOS**
+---
 
-# CHINMAYI HOSUR
+# **INDIVIDUAL PORTFOLIOS OF TEAM MATES**
+
+**CHINMAYI HOSUR**
+
 **GITHUB LINK:** **https://01fe23cs262.github.io/sarnath.github.io/**
 
 **USN: 01FE23BCS262**
-
-![WhatsApp Image 2024-03-29 at 9 21 04 PM](https://github.com/user-attachments/assets/2b79035f-4de4-4921-b101-448f1e6e5c16)
-
+---
 
 
+**SRIPRIYA A H**
 
-# SRIPRIYA A H
 **GITHUB LINK: https://sripriya2505.github.io/portfolio.github.io/**
 
 **USN: 01FE23BCS209**
+---
 
+**SPURTHI S M K**
 
-# SPURTHI S M K
 **GITHUB LINK:** **https://spurtismk.github.io/daa-spurtismk.io/**
 
 **USN: 01FE23BCS286**
-
-![WhatsApp Image 2025-01-03 at 10 14 49 PM](https://github.com/user-attachments/assets/cfcdf88b-0383-4bac-aaa8-2f248853bc17)
-
+---
 
 
+**H S TEJASWINI**
 
-# H S TEJASWINI
 **GITHUB LINK: https://01fe23bcs090.github.io/portfolio.github.io/**
 
 **USN: 01FE23BCS090**
+---
